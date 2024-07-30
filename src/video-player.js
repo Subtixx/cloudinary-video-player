@@ -153,7 +153,7 @@ class VideoPlayer extends Utils.mixin(Eventable) {
       }
     });
 
-    this.videojs.tech_.on(PLAYER_EVENT.RETRY_PLAYLIST, () => {
+    this.videojs.on(PLAYER_EVENT.RETRY_PLAYLIST, () => {
       const mediaRequestsErrored = get(this.videojs, 'hls.stats.mediaRequestsErrored', 0);
       if (mediaRequestsErrored > 0) {
         this._clearTimeOut();
